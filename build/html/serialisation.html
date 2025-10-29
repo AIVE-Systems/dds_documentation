@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="AIVE DDS Documentation" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#0DCAF0" />
+    
+    
+      <title>Serialisation &mdash; AIVE DDS Documentation  documentation</title>
+    
+    <link rel="canonical" href="serialisation" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-default.min.css?v=0c1bdb5f" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=970f37b1" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="AIVE DDS Documentation  documentation" href="#" />
+        <link rel="prev" title="Configuration" href="configuration.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+
+      h1 *,
+      h2 *,
+      h3 *,
+      h4 *,
+      h5 *,
+      h6 * {
+        font-size: inherit;
+      }
+
+      .light pre,
+      .dark pre {
+        line-height: var(--nftt-pre-line-height, 140%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+             class="navbar-brand"
+          ><span class="brand-text">AIVE DDS Documentation</span><span class="brand-short-text">AIVE DDS Documentation</span></a>
+        
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">AIVE DDS Documentation</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+              
+              
+              
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mavlink_dds.html">MAVLink-DDS Bridge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drop_payload.html">Payload Drop System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Serialisation</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Serialisation</li>
+  </ol>
+</nav>
+    <section id="serialisation">
+<h1>Serialisation<a class="headerlink" href="#serialisation" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>All messages in the DDS network are serialised using FlatBuffers, a cross-platform serialisation library providing efficient binary encoding with zero-copy access. The <code class="docutils literal notranslate"><span class="pre">flatbuffer_msg_utils</span></code> library provides message definitions, codecs, and utilities for type-safe communication.</p>
+</section>
+<section id="why-flatbuffers">
+<h2>Why FlatBuffers?<a class="headerlink" href="#why-flatbuffers" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><strong>Zero-Copy Access</strong></dt><dd><p>Data can be accessed directly from the serialised buffer without unpacking, reducing memory allocations and CPU overhead.</p>
+</dd>
+<dt><strong>Strong Typing</strong></dt><dd><p>Schema definitions ensure compile-time type safety and prevent incompatible message formats.</p>
+</dd>
+<dt><strong>Cross-Language Support</strong></dt><dd><p>Generated code available for Rust, Python, C++, Java, and others, enabling heterogeneous systems.</p>
+</dd>
+<dt><strong>Efficiency</strong></dt><dd><p>Minimal serialisation overhead and compact binary encoding suitable for bandwidth-constrained networks.</p>
+</dd>
+<dt><strong>Forward/Backward Compatibility</strong></dt><dd><p>Schema evolution allows adding new fields without breaking existing code.</p>
+</dd>
+</dl>
+</section>
+<section id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Link to this heading">¶</a></h2>
+<p><strong>Adding as Submodule:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git@github.com:AIVE-Systems/flatbuffer_msg_utils.git<span class="w"> </span>msg_utils/
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p><strong>Checking Out Stable Version:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>msg_utils
+git<span class="w"> </span>checkout<span class="w"> </span>tags/vX.X.X
+<span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<p><strong>Compiling Schemas:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>run<span class="w"> </span>fbs
+</pre></div>
+</div>
+<p>This generates Rust bindings from FlatBuffer schemas. Add additional flags for other languages if needed.</p>
+</section>
+<section id="supported-message-types">
+<h2>Supported Message Types<a class="headerlink" href="#supported-message-types" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Supported Message Types</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Message Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>File</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Land</span></code></p></td>
+<td><p>Aircraft ID info and landing information</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_land.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Mission</span></code></p></td>
+<td><p>Aircraft ID info and a list of mission elements (for takeoff, waypoints, and landing) with ordered parameter tuples</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_mission.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Takeoff</span></code></p></td>
+<td><p>Aircraft ID info and takeoff information</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_takeoff.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Waypoint</span></code></p></td>
+<td><p>Aircraft ID info and waypoint information: acceptance radius (32-bit float), pass_radius (32-bit float), latitude (32-bit float), longitude (32-bit float), altitude (32-bit float), autocontinue (Boolean), heading (32-bit float)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Attitude</span></code></p></td>
+<td><p>Aircraft ID info and 3-dimensional roll, pitch and yaw values (32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_attitude.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GlobalPosition</span></code></p></td>
+<td><p>Aircraft ID info and 3-dimensional global position information (32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_global_position.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Heading</span></code></p></td>
+<td><p>Aircraft ID info and a heading value (32-bit float)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_heading.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LocalPosition</span></code></p></td>
+<td><p>Aircraft ID info and 3-dimensional position information (32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_local_position.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Speed</span></code></p></td>
+<td><p>Aircraft ID info and a speed value (32-bit float)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Status</span></code></p></td>
+<td><p>Aircraft ID info and a status (stored as an enum for better packing, functions take/return it as a string)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_status.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Velocity</span></code></p></td>
+<td><p>Aircraft ID info and 3-dimensional velocity information (32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_velocity.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Bool</span></code></p></td>
+<td><p>A primitive Boolean value</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Float</span></code></p></td>
+<td><p>A primitive double-precision (64-bit) float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Int</span></code></p></td>
+<td><p>A primitive 64-bit (long) integer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p>A primitive string field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Wind</span></code></p></td>
+<td><p>Wind prediction data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wind.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Mode</span></code></p></td>
+<td><p>Aircraft mode information/setting</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_mode.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">State</span></code></p></td>
+<td><p>Aircraft (movement) state information</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_state.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Radiance</span></code></p></td>
+<td><p>IR radiance values (flattened 3D array of 32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_radiance.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Temperature</span></code></p></td>
+<td><p>IR temperature values (flattened 2D array of 32-bit floats)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_temperature.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Hotspot</span></code></p></td>
+<td><p>IR hotspot values (flattened 2D array of 8-bit unsigned ints)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_hotspot.fbs</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="supported-topics">
+<h2>Supported Topics<a class="headerlink" href="#supported-topics" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Supported Topics</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic Key</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Message Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_next_waypoint</span></code></p></td>
+<td><p>Set the next waypoint for the UAV to navigate to immediately</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/add_waypoint</span></code></p></td>
+<td><p>Add a waypoint to the end of the UAV’s mission</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_loiter</span></code></p></td>
+<td><p>Set the next waypoint for the UAV to loiter at to immediately</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/add_loiter</span></code></p></td>
+<td><p>Add a waypoint to the end of the UAV’s mission to loiter at</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_takeoff</span></code></p></td>
+<td><p>Set the UAV to takeoff</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_takeoff.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_landing</span></code></p></td>
+<td><p>Set the UAV to land</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_land.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/add_landing</span></code></p></td>
+<td><p>Set the UAV to land at the end of the mission</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_land.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_mission</span></code></p></td>
+<td><p>Set a whole mission for the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_mission.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/position</span></code></p></td>
+<td><p>Position information of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_global_position.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/local_position</span></code></p></td>
+<td><p>Position information of the UAV in local coordinates</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_local_position.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/velocity</span></code></p></td>
+<td><p>Velocity information of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_velocity.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/heading</span></code></p></td>
+<td><p>Heading information of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_heading.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/attitude</span></code></p></td>
+<td><p>Attitude information of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_attitude.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/status</span></code></p></td>
+<td><p>Status information of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_status.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/wind</span></code></p></td>
+<td><p>Wind estimates from the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wind.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/wind_sim</span></code></p></td>
+<td><p>Wind estimates from the UAV (simulation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wind.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/airspeed</span></code></p></td>
+<td><p>Airspeed estimate from the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/groundspeed</span></code></p></td>
+<td><p>Groundspeed estimate from the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/climbspeed</span></code></p></td>
+<td><p>Climb speed estimate from the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/plan_drop_waypoint</span></code></p></td>
+<td><p>Trigger FSD drop plan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/plan_sprint</span></code></p></td>
+<td><p>Trigger sprint plan to head towards drop waypoint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_sprint</span></code></p></td>
+<td><p>Send over the sprint path to ardupilot through set_mission</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/start_aircraft</span></code></p></td>
+<td><p>Intended to be a physical switch to release the aircraft ConOps autonomous system</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/FST_coordinates</span></code></p></td>
+<td><p>Coordinates of the FST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">asset_global_position.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/battery_percentage</span></code></p></td>
+<td><p>Battery percentage of the UAV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_drop_pose</span></code></p></td>
+<td><p>Set the waypoint for payload drop</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">aircraft_waypoint.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/enable_drop_system</span></code></p></td>
+<td><p>Enable the aircraft to perform drop procedure (open/close payload bay, drop, etc)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/open_payload_bay</span></code></p></td>
+<td><p>Open payload bay doors</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/close_payload_bay</span></code></p></td>
+<td><p>Close payload bay doors</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/payload_bay_state</span></code></p></td>
+<td><p>Status of payload bay doors (opened, closed)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/time_to_reach_drop</span></code></p></td>
+<td><p>Time to reach drop waypoint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/drop_payload</span></code></p></td>
+<td><p>Actuate the payload drop</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/set_mode</span></code></p></td>
+<td><p>Set the flight controller mode</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mode.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/mode</span></code></p></td>
+<td><p>Flight controller mode information</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mode.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/movement_state</span></code></p></td>
+<td><p>Flight controller movement state information, e.g. IN_AIR, TAKEOFF, etc.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">state.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/fire/sensor_radiance</span></code></p></td>
+<td><p>Radiance at the sensor for a specific aircraft</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_radiance.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/fire/ground_radiance</span></code></p></td>
+<td><p>Radiance at the ground for a specific aircraft</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_radiance.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/fire/hotspot</span></code></p></td>
+<td><p>Hotspots for a specific aircraft</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_hotspot.fbs</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/fire/temperature</span></code></p></td>
+<td><p>Temperature for a specific aircraft</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ir_temperature.fbs</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aircraft/[TYPE]/[ID]/fire/metadata</span></code></p></td>
+<td><p>IR Metadata</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string.fbs</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="topic-message-mapping">
+<h2>Topic-Message Mapping<a class="headerlink" href="#topic-message-mapping" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">codec_registry.rs</span></code> file maintains mappings between topic patterns and message types using regular expressions:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">TOPIC_MAPPINGS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="p">[(</span><span class="o">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">MessageType</span><span class="p">)]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[</span>
+<span class="w">    </span><span class="p">(</span><span class="s">r&quot;^aircraft/.*/.*/position$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MessageType</span><span class="p">::</span><span class="n">GlobalPosition</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s">r&quot;^aircraft/.*/.*/velocity$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MessageType</span><span class="p">::</span><span class="n">Velocity</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s">r&quot;^aircraft/.*/.*/set_landing$&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MessageType</span><span class="p">::</span><span class="n">Land</span><span class="p">),</span>
+<span class="w">    </span><span class="c1">// ... additional mappings</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p>This enables automatic codec selection based on topic name, ensuring type safety across the system.</p>
+</section>
+<section id="using-the-library">
+<h2>Using the Library<a class="headerlink" href="#using-the-library" title="Link to this heading">¶</a></h2>
+<p>The library’s core utility is its ability to automatically select the correct FlatBuffer codec (encoder/decoder) based on the DDS topic name, ensuring type safety. This is managed by the regular expression mappings in <code class="docutils literal notranslate"><span class="pre">codec_registry.rs</span></code>.</p>
+<p>When sending or receiving a message on a topic like <code class="docutils literal notranslate"><span class="pre">aircraft/STA/1/local_position</span></code>, the system uses a regular expression match to determine how to encode or decode a message.</p>
+<section id="rust-examples">
+<h3>Rust Examples<a class="headerlink" href="#rust-examples" title="Link to this heading">¶</a></h3>
+<p>To encode a message</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">decode_fn</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_decode_handler</span><span class="p">(</span><span class="o">&amp;</span><span class="n">key_str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">decode_fn</span><span class="p">(</span><span class="n">payload_bytes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">decoded_msg</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">decoded_msg</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">DecodedMessage</span><span class="p">::</span><span class="n">Takeoff</span><span class="p">(</span><span class="n">_ts</span><span class="p">,</span><span class="w"> </span><span class="n">_ttype</span><span class="p">,</span><span class="w"> </span><span class="n">_id</span><span class="p">,</span><span class="w"> </span><span class="n">climb_angle</span><span class="p">,</span><span class="w"> </span><span class="n">alt</span><span class="p">,</span><span class="w"> </span><span class="n">_autocontinue</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">takeoff</span><span class="p">(</span><span class="n">cmd_tx</span><span class="p">,</span><span class="w"> </span><span class="n">_mission_rx</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">climb_angle</span><span class="p">,</span><span class="w"> </span><span class="n">alt</span><span class="p">).</span><span class="k">await</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">warn</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Takeoff callback used on an unknown message type.&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="nb">Err</span><span class="p">(</span><span class="s">&quot;Unknown message type&quot;</span><span class="p">.</span><span class="n">into</span><span class="p">())</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">error</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Error decoding message on {}: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">key_str</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+<span class="w">            </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">.</span><span class="n">into</span><span class="p">())</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">warn</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;No handler found for message on {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">key_str</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">Err</span><span class="p">(</span><span class="s">&quot;No handler found&quot;</span><span class="p">.</span><span class="n">into</span><span class="p">())</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To decode a message</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;aircraft/{}/{}/position&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ttype</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">encode_fn</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_encode_handler</span><span class="p">(</span><span class="n">topic</span><span class="p">.</span><span class="n">as_str</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">encoded_msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">encode_fn</span><span class="p">(</span><span class="n">EncodeMessageArgs</span><span class="p">::</span><span class="n">GlobalPosition</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ttype</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">ttype</span><span class="p">),</span>
+<span class="w">        </span><span class="n">id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nc">lat</span><span class="p">,</span>
+<span class="w">        </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nc">lon</span><span class="p">,</span>
+<span class="w">        </span><span class="n">altitude</span><span class="p">:</span><span class="w"> </span><span class="nc">alt</span><span class="p">,</span>
+<span class="w">    </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">error</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Failed to encode message: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">to_send</span><span class="p">.</span><span class="n">push</span><span class="p">((</span>
+<span class="w">        </span><span class="n">topic</span><span class="p">,</span>
+<span class="w">        </span><span class="n">encoded_msg</span><span class="p">,</span>
+<span class="w">        </span><span class="fm">format!</span><span class="p">(</span><span class="s">&quot;Latitude: {}, Longitude: {}, Altitude: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">alt</span><span class="p">),</span>
+<span class="w">    </span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">error</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;No encoder found for {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">topic</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="python-examples">
+<h3>Python Examples<a class="headerlink" href="#python-examples" title="Link to this heading">¶</a></h3>
+<p>To encode a message</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">msg_utils</span>
+
+<span class="n">lat</span> <span class="o">=</span> <span class="mf">51.5014</span>
+<span class="n">long</span> <span class="o">=</span> <span class="mf">0.1419</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">msg_utils</span><span class="o">.</span><span class="n">codings</span><span class="o">.</span><span class="n">encode_global_position_msg</span><span class="p">(</span>
+    <span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="o">=</span><span class="n">long</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="n">alt</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">TYPE</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">ID</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">TOPIC</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>To decode a message</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">msg_utils</span>
+
+<span class="n">payload_dict</span> <span class="o">=</span> <span class="n">msg_utils</span><span class="o">.</span><span class="n">codings</span><span class="o">.</span><span class="n">decode_msg</span><span class="p">(</span><span class="n">payload_bytes</span><span class="p">,</span> <span class="n">TOPIC</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Serialisation</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#why-flatbuffers">Why FlatBuffers?</a></li>
+<li><a class="reference internal" href="#integration">Integration</a></li>
+<li><a class="reference internal" href="#supported-message-types">Supported Message Types</a></li>
+<li><a class="reference internal" href="#supported-topics">Supported Topics</a></li>
+<li><a class="reference internal" href="#topic-message-mapping">Topic-Message Mapping</a></li>
+<li><a class="reference internal" href="#using-the-library">Using the Library</a><ul>
+<li><a class="reference internal" href="#rust-examples">Rust Examples</a></li>
+<li><a class="reference internal" href="#python-examples">Python Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="configuration.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Configuration">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Configuration</span>
+              </div>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="AIVE DDS Documentation">
+          <span class="fs-6 fw-bold">AIVE DDS Documentation</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Toby Godfrey</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.8.9</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=cd4e68e4"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=647f0dd8"></script>
+  </body>
+</html>

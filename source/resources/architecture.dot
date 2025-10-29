@@ -1,0 +1,72 @@
+digraph G {
+  node [shape=rectangle];
+
+  subgraph cluster_uav {
+    label="UAV"
+
+    uflight_controller [label="Flight Controller"]
+
+    subgraph cluster_uav_mac {
+      label="Mac Mini"
+
+      umavlink_bridge [label="MAVLink Bridge"]
+      udds [label="Data Space"]
+      uconfig [label="Configuration"]
+      user [label="Serialisation"]
+    }
+
+    ucomms [label="Communication\nModule"]
+
+    uflight_controller -> umavlink_bridge [dir="both", label="MAVLink"]
+    umavlink_bridge -> udds [dir="both", label="TCP"]
+    uconfig -> umavlink_bridge [style="dashed"]
+    umavlink_bridge -> user [dir="both", style="dashed"]
+    udds -> ucomms [dir="both", label="TCP"]
+  }
+
+  subgraph cluster_gs {
+    label="Ground Station"
+
+    subgraph cluster_uav_mac1 {
+      label="Mac Mini 1"
+
+      g1dds [label="Data Space"]
+      g1d [label="..."]
+      g1config [label="Configuration"]
+
+      g1dds -> g1d [dir="both", label="TCP"]
+      g1config -> g1d [style="dashed"]
+    }
+
+    subgraph cluster_uav_mac2 {
+      label="Mac Mini 2"
+
+      g2dds [label="Data Space"]
+      g2d [label="..."]
+      g2config [label="Configuration"]
+
+      g2dds -> g2d [dir="both", label="TCP"]
+      g2config -> g2d [style="dashed"]
+    }
+
+    subgraph cluster_uav_mac3 {
+      label="Mac Mini 3"
+
+      g3dds [label="Data Space"]
+      g3d [label="..."]
+      g3config [label="Configuration"]
+
+      g3dds -> g3d [dir="both", label="TCP"]
+      g3config -> g3d [style="dashed"]
+    }
+
+    gcomms [label="Communication\nModule"]
+
+    gcomms -> g1dds [dir="both", label="TCP"]
+    gcomms -> g2dds [dir="both", label="TCP"]
+    gcomms -> g3dds [dir="both", label="TCP"]
+  }
+
+  ucomms -> gcomms [dir="both", label="TCP"]
+
+}

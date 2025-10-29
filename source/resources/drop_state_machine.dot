@@ -1,0 +1,19 @@
+digraph DropStateMachine {
+    DropDisabled [label="Drop Disabled"];
+    DoorsClosed [label="Doors Closed"];
+    DoorsOpen [label="Doors Open"];
+    PayloadDropped [label="Payload Dropped"];
+
+    // Transitions
+    DropDisabled -> DoorsClosed [label="Enable Drop"];
+    DoorsClosed -> DoorsOpen [label="Open Doors"];
+    DoorsClosed -> DropDisabled [label="Disable Drop"];
+    DoorsOpen -> PayloadDropped [label="Drop Payload"];
+    DoorsOpen -> DoorsClosed [label="Close Doors"];
+    // PayloadDropped -> DoorsClosed [label="CloseDoors"];
+    PayloadDropped -> PayloadDropped [label="Close Doors"];
+
+    // Start indicator
+    start [style="invis"];
+    start -> DropDisabled;
+}

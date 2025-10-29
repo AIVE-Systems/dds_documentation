@@ -6,6 +6,10 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+doc = "sphinx-build -M html source/ build/"
 
 [dependencies]
 sphinx = ">=8.2.3,<9"
+
+[pypi-dependencies]
+sphinx-nefertiti = ">=0.8.9, <0.9"
