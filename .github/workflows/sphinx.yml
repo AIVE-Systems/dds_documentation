@@ -19,6 +19,7 @@ jobs:
         with:
           docs-folder: source
           build-command: sphinx-build -M html . ../build
+          pre-build-command: pip install sphinx_nefertiti
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
