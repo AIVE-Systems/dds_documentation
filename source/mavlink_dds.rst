@@ -82,6 +82,12 @@ The bridge publishes the following telemetry data:
    * - ``aircraft/[TYPE]/[ID]/movement_state``
      - Movement state (e.g., ON_GROUND, IN_AIR)
      - ``aircraft_state``
+   * - ``aircraft/[TYPE]/[ID]/battery_percentage``
+     - The percentage of the battery
+     - ``float``
+   * - ``aircraft/[TYPE]/[ID]/wind``
+     - Wind estimation data
+     - ``wind``
 
 Subscribed Topics
 -----------------
