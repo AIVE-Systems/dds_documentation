@@ -1,9 +1,8 @@
-======================
 Protocol v2 Proposal
 ======================
 
 Recap of Current System
-========================
+-----------------------
 
 Currently, messages are constructed using a FlatBuffer table. Almost always, this begins with a 64-bit Unix timestamp to indicate when the message was serialised. This is included even though Zenoh appends a timestamp to each ``Sample``; the reason for this is to make the protocol DDS-agnostic, allowing for greater flexibility at the cost of an extra 8-bytes in the message. Often this timestamp is followed by an aircraft/asset type enum, e.g. FSA, STA, FIRE, etc., followed by an 8-bit type-specific ID. The successive fields are then message-dependent.
 
@@ -20,7 +19,7 @@ Currently, messages are constructed using a FlatBuffer table. Almost always, thi
    This does not mean the FlatBuffers byte array is 14 bytes, due to packing and padding systems.
 
 Message v2 Proposal
-===================
+-------------------
 
 The idea of the version two of the protocol is to improve the ease of decoding messages. This would split a message into two parts, a header and a payload. The header would contain a 64-bit Unix timestamp, an enum indicating the message type, the device type of the sender, and the ID of the sender. The payload would then contain the message-specific fields, e.g. a speed float, or a fire class (possible or confirmed) and latitude, longitude and altitude fields. This would enable decoding to be done without mapping to topics, not only would this improve the usability of the library, but it would also improve the robustness to error as messages sent on the wrong topic could still be decoded if needed. As the header would be a fixed number of bytes (8 + 1 + 1 + 1 = 11 Bytes), the decoding system would take the first 11 bytes (or the specific header size) of the message and deserialise that into a 4-tuple (using FlatBuffers); the message type would then be used to map to a decoding function.
 

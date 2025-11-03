@@ -18,6 +18,7 @@ This site details the necessary information for using the DDS and associated tec
 
    overview
    architecture
+   user_guide
    mavlink_dds
    configuration
    serialisation

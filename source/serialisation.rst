@@ -6,6 +6,11 @@ Overview
 
 All messages in the DDS network are serialised using FlatBuffers, a cross-platform serialisation library providing efficient binary encoding with zero-copy access. The ``flatbuffer_msg_utils`` library provides message definitions, codecs, and utilities for type-safe communication.
 
+.. note::
+
+  A proposal for an updated version of this library is :doc:`here<v2_serialisation_proposal>`.
+
+
 Sub-Pages
 ---------
 
