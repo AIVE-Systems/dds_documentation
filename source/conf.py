@@ -24,3 +24,19 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "sphinx_nefertiti"
 html_static_path = ["_static"]
+html_theme_options = {
+    "style": "orange",
+    "header_links": [
+        {
+            "text": "Overview",
+            "link": "overview",
+        },
+        {
+            "text": "User Guide",
+            "link": "user_guide",
+        },
+    ],
+    "logo": "logo.png",
+    "logo_width": 24,
+    "logo_height": 24,
+}
