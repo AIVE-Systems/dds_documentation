@@ -37,6 +37,6 @@ html_theme_options = {
         },
     ],
     "logo": "logo.png",
-    "logo_width": 24,
-    "logo_height": 24,
+    "logo_width": 40,
+    "logo_height": 40,
 }
