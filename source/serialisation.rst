@@ -136,6 +136,9 @@ Supported Message Types
    * - ``Hotspot``
      - IR hotspot values (flattened 2D array of 8-bit unsigned ints)
      - ``ir_hotspot.fbs``
+   * - ``ArmDisarm``
+     - Enum as to whether the aircraft is/should be armed or disarmed
+     - ``aircraft_arm_disarm.fbs``
 
 Supported Topics
 ----------------
@@ -245,10 +248,16 @@ Supported Topics
      - ``bool.fbs``
    * - ``aircraft/[TYPE]/[ID]/set_mode``
      - Set the flight controller mode
-     - ``mode.fbs``
+     - ``aircraft_mode.fbs``
    * - ``aircraft/[TYPE]/[ID]/mode``
      - Flight controller mode information
-     - ``mode.fbs``
+     - ``aircraft_mode.fbs``
+   * - ``aircraft/[TYPE]/[ID]/set_arm_disarm``
+     - Set the flight controller to armed or disarmed
+     - ``aircraft_arm_disarm.fbs``
+   * - ``aircraft/[TYPE]/[ID]/arm_disarm``
+     - Flight controller arm/disarm state
+     - ``aircraft_arm_disarm.fbs``
    * - ``aircraft/[TYPE]/[ID]/movement_state``
      - Flight controller movement state information, e.g. IN_AIR, TAKEOFF, etc.
      - ``state.fbs``
