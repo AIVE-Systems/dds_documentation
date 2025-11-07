@@ -72,3 +72,60 @@ This repo has one automated processes, ``Sphinx``.
     - ``sphinx.yml``
     - Push to ``main``
     - Builds the documentation and push to the ``gh-pages`` branch.
+
+``config_reader``
+-----------------
+
+This repo has two automated processes, ``CI`` and ``Release``.
+
+.. list-table:: Automated Tasks
+    :widths: 10 10 10 10 10 40
+    :header-rows: 1
+
+    * - Task
+      - Category
+      - Platform
+      - File
+      - Trigger(s)
+      - Description
+    * - CI
+      - Testing
+      - Jenkins
+      - ``Jenkinsfile.ci``
+      - Push to ``main``
+      - Tests build success in a clean environment, then runs the following:
+
+        - Rust unit tests
+        - Rust unit tests (with Python extension)
+
+    * - Release
+      - Deployment
+      - GitHub Actions
+      - ``release.yml``
+      - New tag created
+      - Builds the project on Linux x86_64, Linux AArch64, and macOS AArch64, creates Python wheels for the bindings and adds them to the latest release.
+
+
+``mavlink_dds_compatibility_node``
+----------------------------------
+
+This repo has one automated processes, ``CI``.
+
+.. list-table:: Automated Tasks
+    :widths: 10 10 10 10 10 40
+    :header-rows: 1
+
+    * - Task
+      - Category
+      - Platform
+      - File
+      - Trigger(s)
+      - Description
+    * - CI
+      - Testing
+      - Jenkins
+      - ``Jenkinsfile.ci``
+      - Push to ``main``
+      - Tests build success in a clean environment, then runs the following:
+
+        - Rust unit tests
