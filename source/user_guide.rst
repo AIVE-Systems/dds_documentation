@@ -86,3 +86,74 @@ Troubleshooting
 
 - **No connection to the flight controller**: Check that the config file has the correct MAVLink address, or is set to ``enumerate`` (case sensitive).
 - **No messages received**: While the bridge is running, briefly power-cycle the flight controller (not the mission systems). If this still doesn't work, reboot the compute unit.
+
+NFOV
+----
+
+First, ``ssh`` into the NFOV sensor by ensuring you are connected to the network (either the mission critical ground network, or the UAV network itself). Navigate to the gateway IP (shown below) and scroll down to the DHCP leases to find the address of the UAV's compute unit.
+
+- Alpha network: ``10.10.0.1``
+- Beta network: ``10.20.0.1``
+- Gamma network: ``10.30.0.1``
+- Delta network: ``10.40.0.1``
+
+Then run :code:`ssh firetirs2-surv1@ip`.
+
+- **IR Sensors**
+
+  1. ``screen -S ir``
+  2. ``cd ~/surveillance_instrument/scripts``
+  3. ``python3 ir-camera-seek-process.py``
+  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  5. Verify it is running with ``screen -ls``
+
+- **RGB Sensors**
+
+  1. ``screen -S rgb``
+  2. ``cd ~/surveillance_instrument/scripts``
+  3. ``python3 picamera2_fps_stream.py``
+  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  5. Verify it is running with ``screen -ls``
+
+- **Gimble Trackings**
+
+  1. ``screen -S gimble``
+  2. TODO
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+- **No connection to the flight controller**: Check the connection between the sensors and the flight controller.
+
+WFOV
+----
+
+First, ``ssh`` into the WFOV sensor by ensuring you are connected to the network (either the mission critical ground network, or the UAV network itself). Navigate to the gateway IP (shown below) and scroll down to the DHCP leases to find the address of the UAV's compute unit.
+
+- Alpha network: ``10.10.0.1``
+- Beta network: ``10.20.0.1``
+- Gamma network: ``10.30.0.1``
+- Delta network: ``10.40.0.1``
+
+Then run :code:`ssh firetirs2-search1@ip`.
+
+- **IR Sensors**
+
+  1. ``screen -S ir``
+  2. ``cd ~/search_instrument/scripts``
+  3. ``python3 ir-camera-seek-process.py``
+  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  5. Verify it is running with ``screen -ls``
+
+- **RGB Sensors**
+
+  1. ``screen -S rgb``
+  2. ``cd ~/search_instrument/scripts``
+  3. ``python3 picamera2_fps_stream.py``
+  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  5. Verify it is running with ``screen -ls``
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+- **No connection to the flight controller**: Check the connection between the sensors and the flight controller.
