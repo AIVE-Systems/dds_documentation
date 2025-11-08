@@ -70,7 +70,7 @@ Then run :code:`ssh staX@ip`.
 
   1. ``screen -S zenoh``
   2. ``~/zenoh/zenohd``
-  3. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  3. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   4. Verify it is running with ``screen -ls``
 
 - **MAVLink/DDS Bridge**
@@ -78,7 +78,7 @@ Then run :code:`ssh staX@ip`.
   1. ``screen -S mavdds``
   2. ``cd ~/mavlink_dds_compatibility_node``
   3. ``./target/release/mavlink_dds_node --config [config file path]``, e.g. ``--config config_reader/config/sta1.toml``
-  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   5. Verify it is running with ``screen -ls``
 
 Troubleshooting
@@ -104,7 +104,7 @@ Then run :code:`ssh firetirs2-surv1@ip`.
   1. ``screen -S ir``
   2. ``cd ~/surveillance_instrument/scripts``
   3. ``python3 ir-camera-seek-process.py``
-  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   5. Verify it is running with ``screen -ls``
 
 - **RGB Sensors**
@@ -112,7 +112,7 @@ Then run :code:`ssh firetirs2-surv1@ip`.
   1. ``screen -S rgb``
   2. ``cd ~/surveillance_instrument/scripts``
   3. ``python3 picamera2_fps_stream.py``
-  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   5. Verify it is running with ``screen -ls``
 
 - **Gimble Trackings**
@@ -142,7 +142,7 @@ Then run :code:`ssh firetirs2-search1@ip`.
   1. ``screen -S ir``
   2. ``cd ~/search_instrument/scripts``
   3. ``python3 ir-camera-seek-process.py``
-  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   5. Verify it is running with ``screen -ls``
 
 - **RGB Sensors**
@@ -150,7 +150,7 @@ Then run :code:`ssh firetirs2-search1@ip`.
   1. ``screen -S rgb``
   2. ``cd ~/search_instrument/scripts``
   3. ``python3 picamera2_fps_stream.py``
-  4. Detach from the session with ``CTRL + a`` (release) and then ``d``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
   5. Verify it is running with ``screen -ls``
 
 Troubleshooting
