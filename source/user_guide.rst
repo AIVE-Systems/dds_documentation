@@ -24,30 +24,30 @@ Each of these commands can be run in a new terminal window/tab, or in a screen s
 - **NFOV Receivers**
 
   1. :code:`cd ~/img_sockets/surv` (Can't remember the exact name)
-  3. To receiver images run
+  2. To receiver images run
 
-    i. IR images: :code:`python3 ir_video.py`
-    ii. RGB images: :code:`python3 rgb_video.py`
+     i. IR images: :code:`python3 ir_video.py`
+     ii. RGB images: :code:`python3 rgb_video.py`
 
-  4. Run :command:`vlc &` in a shell (this allows launching more than one session)
-  5. :kbd:`CTRL/CMD+n` to open a network stream
+  3. Run :command:`vlc &` in a shell (this allows launching more than one session)
+  4. :kbd:`CTRL/CMD+n` to open a network stream
 
-    i. For the IR stream enter :code:`udp://@:13345`
-    ii. For the RGB stream enter :code:`udp://@:13346`
+     i. For the IR stream enter :code:`udp://@:13345`
+     ii. For the RGB stream enter :code:`udp://@:13346`
 
 - **WFOV Receivers**
 
   1. :code:`cd ~/img_sockets/search` (Can't remember the exact name)
-  3. To receiver images run
+  2. To receiver images run
 
-    i. IR images: :code:`python3 ir_video.py`
-    ii. RGB images: :code:`python3 rgb_video.py`
+     i. IR images: :code:`python3 ir_video.py`
+     ii. RGB images: :code:`python3 rgb_video.py`
 
-  4. Run :command:`vlc &` in a shell (this allows launching more than one session)
-  5. :kbd:`CTRL/CMD+n` to open a network stream
+  3. Run :command:`vlc &` in a shell (this allows launching more than one session)
+  4. :kbd:`CTRL/CMD+n` to open a network stream
 
-    i. For the IR stream enter :code:`udp://@:12345`
-    ii. For the RGB stream enter :code:`udp://@:12346`
+     i. For the IR stream enter :code:`udp://@:12345`
+     ii. For the RGB stream enter :code:`udp://@:12346`
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
