@@ -118,12 +118,15 @@ Then run :code:`ssh firetirs2-surv1@ip`.
 - **Gimble Trackings**
 
   1. ``screen -S gimble``
-  2. TODO
+  2. ``cd ~/surveillance_instrument/scripts``
+  3. ``python3 gimble_tracker.py``
+  4. Detach from the session with :kbd:`CTRL+a` (release) and then :kbd:`d`
+  5. Verify it is running with ``screen -ls``
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-- **No connection to the flight controller**: Check the connection between the sensors and the flight controller.
+- **No movement**: Check the physical setup of the gimble, and check the IR camera is running and writing the ``NumPy`` mask file to the same location the gimble is reading it from.
 
 WFOV
 ----
