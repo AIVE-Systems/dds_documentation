@@ -85,7 +85,7 @@ Troubleshooting
 ^^^^^^^^^^^^^^^
 
 - **No connection to the flight controller**: Check that the config file has the correct MAVLink address, or is set to ``enumerate`` (case sensitive).
-- **No messages received**: While the bridge is running, briefly power-cycle the flight controller (not the mission systems). If this still doesn't work, reboot the compute unit.
+- **No messages received**: While the bridge is running, briefly power-cycle the flight controller (not the mission systems). If this still doesn't work, reboot the compute unit. If the address in the config is set to ``enumerate``, try setting the specific address to ``serial:[PORT]:115200`` (the port is likely ``/dev/tty.usbmodemXXXX`` on macOS and ``/dev/ttyACMX`` on Linux).
 
 NFOV
 ----
