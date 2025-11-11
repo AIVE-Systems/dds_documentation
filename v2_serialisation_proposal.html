@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="AIVE DDS Documentation" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#FD7E14" />
+    
+    
+      <title>Protocol v2 Proposal &mdash; AIVE DDS Documentation  documentation</title>
+    
+    <link rel="canonical" href="v2_serialisation_proposal" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-orange.min.css?v=b8976d21" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=970f37b1" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="AIVE DDS Documentation  documentation" href="#" />
+        <link rel="up" title="Serialisation" href="serialisation.html" />
+        <link rel="prev" title="Serialisation" href="serialisation.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+
+      h1 *,
+      h2 *,
+      h3 *,
+      h4 *,
+      h5 *,
+      h6 * {
+        font-size: inherit;
+      }
+
+      .light pre,
+      .dark pre {
+        line-height: var(--nftt-pre-line-height, 140%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a
+            href="index.html"
+            class="navbar-brand"
+          >
+            <img src="_static/logo.png" width="40" height="40"
+              class="project-logo"
+            />
+            <span class="brand-text">AIVE DDS Documentation</span><span class="brand-short-text">AIVE DDS Documentation</span>
+          </a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="overview.html" data-snftt-hl-id="1" >Overview</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="user_guide.html" data-snftt-hl-id="2" >User Guide</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">AIVE DDS Documentation</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="overview.html" data-snftt-hl-id="1" >Overview</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="user_guide.html" data-snftt-hl-id="2" >User Guide</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              
+              
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci.html">Automated Testing &amp; Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="components.html">System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mavlink_dds.html">MAVLink-DDS Bridge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="drop_payload.html">Payload Drop System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="serialisation.html">Serialisation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Protocol v2 Proposal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+      <li class="breadcrumb-item"><a href="components.html">System Components</a></li>
+      <li class="breadcrumb-item"><a href="serialisation.html">Serialisation</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Protocol v2 Proposal</li>
+  </ol>
+</nav>
+    <section id="protocol-v2-proposal">
+<h1>Protocol v2 Proposal<a class="headerlink" href="#protocol-v2-proposal" title="Link to this heading">¶</a></h1>
+<section id="recap-of-current-system">
+<h2>Recap of Current System<a class="headerlink" href="#recap-of-current-system" title="Link to this heading">¶</a></h2>
+<p>Currently, messages are constructed using a FlatBuffer table. Almost always, this begins with a 64-bit Unix timestamp to indicate when the message was serialised. This is included even though Zenoh appends a timestamp to each <code class="docutils literal notranslate"><span class="pre">Sample</span></code>; the reason for this is to make the protocol DDS-agnostic, allowing for greater flexibility at the cost of an extra 8-bytes in the message. Often this timestamp is followed by an aircraft/asset type enum, e.g. FSA, STA, FIRE, etc., followed by an 8-bit type-specific ID. The successive fields are then message-dependent.</p>
+</section>
+<section id="asset-speed-fbs-visualisation">
+<h2><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code> Visualisation<a class="headerlink" href="#asset-speed-fbs-visualisation" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>B1</p></th>
+<th class="head"><p>B2</p></th>
+<th class="head"><p>B3</p></th>
+<th class="head"><p>B4</p></th>
+<th class="head"><p>B5</p></th>
+<th class="head"><p>B6</p></th>
+<th class="head"><p>B7</p></th>
+<th class="head"><p>B8</p></th>
+<th class="head"><p>B9</p></th>
+<th class="head"><p>B10</p></th>
+<th class="head"><p>B11</p></th>
+<th class="head"><p>B12</p></th>
+<th class="head"><p>B13</p></th>
+<th class="head"><p>B14</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Timestamp 1/8</p></td>
+<td><p>Timestamp 2/8</p></td>
+<td><p>Timestamp 3/8</p></td>
+<td><p>Timestamp 4/8</p></td>
+<td><p>Timestamp 5/8</p></td>
+<td><p>Timestamp 6/8</p></td>
+<td><p>Timestamp 7/8</p></td>
+<td><p>Timestamp 8/8</p></td>
+<td><p>Type</p></td>
+<td><p>ID</p></td>
+<td><p>Speed 1/4</p></td>
+<td><p>Speed 2/4</p></td>
+<td><p>Speed 3/4</p></td>
+<td><p>Speed 4/4</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This does not mean the FlatBuffers byte array is 14 bytes, due to packing and padding systems.</p>
+</div>
+</section>
+<section id="message-v2-proposal">
+<h2>Message v2 Proposal<a class="headerlink" href="#message-v2-proposal" title="Link to this heading">¶</a></h2>
+<p>The idea of the version two of the protocol is to improve the ease of decoding messages. This would split a message into two parts, a header and a payload. The header would contain a 64-bit Unix timestamp, an enum indicating the message type, the device type of the sender, and the ID of the sender. The payload would then contain the message-specific fields, e.g. a speed float, or a fire class (possible or confirmed) and latitude, longitude and altitude fields. This would enable decoding to be done without mapping to topics, not only would this improve the usability of the library, but it would also improve the robustness to error as messages sent on the wrong topic could still be decoded if needed. As the header would be a fixed number of bytes (8 + 1 + 1 + 1 = 11 Bytes), the decoding system would take the first 11 bytes (or the specific header size) of the message and deserialise that into a 4-tuple (using FlatBuffers); the message type would then be used to map to a decoding function.</p>
+<p>When encoding such a message, the system will receive the required parameters as arguments, as it does currently, and then encode the header using a centralised header encoder, then the payload would be serialised using message-specific encoders. For decoding, the first 11 bytes would be sliced, decoded separately, and then the message type field would be matched to message-specific decoding functions.</p>
+<p>This would have several benefits:</p>
+<ul class="simple">
+<li><p>Improved robustness to unexpected message types</p></li>
+<li><p>Identification of senders</p></li>
+<li><p>More maintainable encoding/decoding</p></li>
+<li><p>Usability improvements to the library</p>
+<ul>
+<li><p>Users won’t need to carry the topic around their software</p></li>
+<li><p>Users don’t need to update the library for new topics—only new message types</p></li>
+</ul>
+</li>
+</ul>
+<p>The main drawback is the minimal increase in message size (1 Byte best-case). For example, compare this updated message structure with the one above. This will also obviously be a breaking change and would require users to rewrite their function calls with an additional argument.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>Payload</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+<th class="head"><p>→</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>B1</p></td>
+<td><p>B2</p></td>
+<td><p>B3</p></td>
+<td><p>B4</p></td>
+<td><p>B5</p></td>
+<td><p>B6</p></td>
+<td><p>B7</p></td>
+<td><p>B8</p></td>
+<td><p>B9</p></td>
+<td><p>B10</p></td>
+<td><p>B11</p></td>
+<td><p>B12</p></td>
+<td><p>B13</p></td>
+<td><p>B14</p></td>
+<td><p>B15</p></td>
+</tr>
+<tr class="row-odd"><td><p>Timestamp 1/8</p></td>
+<td><p>Timestamp 2/8</p></td>
+<td><p>Timestamp 3/8</p></td>
+<td><p>Timestamp 4/8</p></td>
+<td><p>Timestamp 5/8</p></td>
+<td><p>Timestamp 6/8</p></td>
+<td><p>Timestamp 7/8</p></td>
+<td><p>Timestamp 8/8</p></td>
+<td><p>Message Type</p></td>
+<td><p>Device Type</p></td>
+<td><p>ID</p></td>
+<td><p>Speed 1/4</p></td>
+<td><p>Speed 2/4</p></td>
+<td><p>Speed 3/4</p></td>
+<td><p>Speed 4/4</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Protocol v2 Proposal</a><ul>
+<li><a class="reference internal" href="#recap-of-current-system">Recap of Current System</a></li>
+<li><a class="reference internal" href="#asset-speed-fbs-visualisation"><code class="docutils literal notranslate"><span class="pre">asset_speed.fbs</span></code> Visualisation</a></li>
+<li><a class="reference internal" href="#message-v2-proposal">Message v2 Proposal</a></li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="serialisation.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Serialisation">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Serialisation</span>
+              </div>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="AIVE DDS Documentation">
+          <span class="fs-6 fw-bold">AIVE DDS Documentation</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Toby Godfrey</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.8.9</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=cd4e68e4"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=647f0dd8"></script>
+  </body>
+</html>

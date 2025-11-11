@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <meta name="docsearch:name" content="AIVE DDS Documentation" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#FD7E14" />
+    
+    
+      <title>User Guide &mdash; AIVE DDS Documentation  documentation</title>
+    
+    <link rel="canonical" href="user_guide" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-orange.min.css?v=b8976d21" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=970f37b1" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="AIVE DDS Documentation  documentation" href="#" />
+        <link rel="next" title="Automated Testing &amp; Deployment" href="ci.html" />
+        <link rel="prev" title="Architecture" href="architecture.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+
+      h1 *,
+      h2 *,
+      h3 *,
+      h4 *,
+      h5 *,
+      h6 * {
+        font-size: inherit;
+      }
+
+      .light pre,
+      .dark pre {
+        line-height: var(--nftt-pre-line-height, 140%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a
+            href="index.html"
+            class="navbar-brand"
+          >
+            <img src="_static/logo.png" width="40" height="40"
+              class="project-logo"
+            />
+            <span class="brand-text">AIVE DDS Documentation</span><span class="brand-short-text">AIVE DDS Documentation</span>
+          </a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="overview.html" data-snftt-hl-id="1" >Overview</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="#" data-snftt-hl-id="2" >User Guide</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">AIVE DDS Documentation</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="overview.html" data-snftt-hl-id="1" >Overview</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="#" data-snftt-hl-id="2" >User Guide</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              
+              
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid flex-grow-1">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci.html">Automated Testing &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components.html">System Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mavlink_dds.html">MAVLink-DDS Bridge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="drop_payload.html">Payload Drop System</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialisation.html">Serialisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="v2_serialisation_proposal.html">Protocol v2 Proposal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+    <li class="breadcrumb-item active" aria-current="page">User Guide</li>
+  </ol>
+</nav>
+    <section id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use <code class="code docutils literal notranslate"><span class="pre">screen</span></code> so commands can continue running if terminal windows get closed accidentally (This is especially important on the UAVs).</p>
+</div>
+<section id="ground-station-x">
+<h2>Ground Station <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#ground-station-x" title="Link to this heading">¶</a></h2>
+<p>Each of these commands can be run in a new terminal window/tab, or in a screen session.</p>
+<ul class="simple">
+<li><p><strong>Zenoh Router</strong></p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">~/zenoh/zenohd</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>HARIS</strong></p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/haris/server/</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span> <span class="pre">hut.jar</span> <span class="pre">44101</span> <span class="pre">DDSTest.json</span></code></p></li>
+<li><p>In the browser, navigate to <code class="code docutils literal notranslate"><span class="pre">http://127.0.0.1:44101</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>NFOV Receivers</strong></p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/img_sockets/surv</span></code> (Can’t remember the exact name)</p></li>
+<li><p>To receiver images run</p>
+<ol class="lowerroman simple">
+<li><p>IR images: <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">ir_video.py</span></code></p></li>
+<li><p>RGB images: <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">rgb_video.py</span></code></p></li>
+</ol>
+</li>
+<li><p>Run <strong class="command">vlc &amp;</strong> in a shell (this allows launching more than one session)</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">CTRL/CMD</kbd>+<kbd class="kbd docutils literal notranslate">n</kbd> to open a network stream</p>
+<ol class="lowerroman simple">
+<li><p>For the IR stream enter <code class="code docutils literal notranslate"><span class="pre">udp://&#64;:13345</span></code></p></li>
+<li><p>For the RGB stream enter <code class="code docutils literal notranslate"><span class="pre">udp://&#64;:13346</span></code></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>WFOV Receivers</strong></p>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/img_sockets/search</span></code> (Can’t remember the exact name)</p></li>
+<li><p>To receiver images run</p>
+<ol class="lowerroman simple">
+<li><p>IR images: <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">ir_video.py</span></code></p></li>
+<li><p>RGB images: <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">rgb_video.py</span></code></p></li>
+</ol>
+</li>
+<li><p>Run <strong class="command">vlc &amp;</strong> in a shell (this allows launching more than one session)</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">CTRL/CMD</kbd>+<kbd class="kbd docutils literal notranslate">n</kbd> to open a network stream</p>
+<ol class="lowerroman simple">
+<li><p>For the IR stream enter <code class="code docutils literal notranslate"><span class="pre">udp://&#64;:12345</span></code></p></li>
+<li><p>For the RGB stream enter <code class="code docutils literal notranslate"><span class="pre">udp://&#64;:12346</span></code></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Blank/grey screen in browser</strong>: This can happen if HARIS hasn’t loaded fully, leave it a minute and keep refreshing the page.</p></li>
+</ul>
+</section>
+</section>
+<section id="sta-x">
+<h2>STA <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#sta-x" title="Link to this heading">¶</a></h2>
+<p>First, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into the UAV by ensuring you are connected to the network (either the mission critical ground network, or the UAV network itself). Navigate to the gateway IP (shown below) and scroll down to the DHCP leases to find the address of the UAV’s compute unit.</p>
+<ul class="simple">
+<li><p>Alpha network: <code class="docutils literal notranslate"><span class="pre">10.10.0.1</span></code></p></li>
+<li><p>Beta network: <code class="docutils literal notranslate"><span class="pre">10.20.0.1</span></code></p></li>
+<li><p>Gamma network: <code class="docutils literal notranslate"><span class="pre">10.30.0.1</span></code></p></li>
+<li><p>Delta network: <code class="docutils literal notranslate"><span class="pre">10.40.0.1</span></code></p></li>
+</ul>
+<p>Then run <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">staX&#64;ip</span></code>.</p>
+<ul class="simple">
+<li><p><strong>Zenoh Router</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">zenoh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/zenoh/zenohd</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>MAVLink/DDS Bridge</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">mavdds</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/mavlink_dds_compatibility_node</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./target/release/mavlink_dds_node</span> <span class="pre">--config</span> <span class="pre">[config</span> <span class="pre">file</span> <span class="pre">path]</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">config_reader/config/sta1.toml</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+</ul>
+<section id="id1">
+<h3>Troubleshooting<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>No connection to the flight controller</strong>: Check that the config file has the correct MAVLink address, or is set to <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> (case sensitive).</p></li>
+<li><p><strong>No messages received</strong>: While the bridge is running, briefly power-cycle the flight controller (not the mission systems). If this still doesn’t work, reboot the compute unit. If the address in the config is set to <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, try setting the specific address to <code class="docutils literal notranslate"><span class="pre">serial:[PORT]:115200</span></code> (the port is likely <code class="docutils literal notranslate"><span class="pre">/dev/tty.usbmodemXXXX</span></code> on macOS and <code class="docutils literal notranslate"><span class="pre">/dev/ttyACMX</span></code> on Linux).</p></li>
+</ul>
+</section>
+</section>
+<section id="nfov">
+<h2>NFOV<a class="headerlink" href="#nfov" title="Link to this heading">¶</a></h2>
+<p>First, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into the NFOV sensor by ensuring you are connected to the network (either the mission critical ground network, or the UAV network itself). Navigate to the gateway IP (shown below) and scroll down to the DHCP leases to find the address of the UAV’s compute unit.</p>
+<ul class="simple">
+<li><p>Alpha network: <code class="docutils literal notranslate"><span class="pre">10.10.0.1</span></code></p></li>
+<li><p>Beta network: <code class="docutils literal notranslate"><span class="pre">10.20.0.1</span></code></p></li>
+<li><p>Gamma network: <code class="docutils literal notranslate"><span class="pre">10.30.0.1</span></code></p></li>
+<li><p>Delta network: <code class="docutils literal notranslate"><span class="pre">10.40.0.1</span></code></p></li>
+</ul>
+<p>Then run <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">firetirs2-surv1&#64;ip</span></code>.</p>
+<ul class="simple">
+<li><p><strong>IR Sensors</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">ir</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/surveillance_instrument/scripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">ir-camera-seek-process.py</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>RGB Sensors</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">rgb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/surveillance_instrument/scripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">picamera2_fps_stream.py</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>Gimble Trackings</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">gimble</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/surveillance_instrument/scripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">gimble_tracker.py</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+</ul>
+<section id="id2">
+<h3>Troubleshooting<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>No movement</strong>: Check the physical setup of the gimble, and check the IR camera is running and writing the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> mask file to the same location the gimble is reading it from.</p></li>
+</ul>
+</section>
+</section>
+<section id="wfov">
+<h2>WFOV<a class="headerlink" href="#wfov" title="Link to this heading">¶</a></h2>
+<p>First, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into the WFOV sensor by ensuring you are connected to the network (either the mission critical ground network, or the UAV network itself). Navigate to the gateway IP (shown below) and scroll down to the DHCP leases to find the address of the UAV’s compute unit.</p>
+<ul class="simple">
+<li><p>Alpha network: <code class="docutils literal notranslate"><span class="pre">10.10.0.1</span></code></p></li>
+<li><p>Beta network: <code class="docutils literal notranslate"><span class="pre">10.20.0.1</span></code></p></li>
+<li><p>Gamma network: <code class="docutils literal notranslate"><span class="pre">10.30.0.1</span></code></p></li>
+<li><p>Delta network: <code class="docutils literal notranslate"><span class="pre">10.40.0.1</span></code></p></li>
+</ul>
+<p>Then run <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">firetirs2-search1&#64;ip</span></code>.</p>
+<ul class="simple">
+<li><p><strong>IR Sensors</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">ir</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/search_instrument/scripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">ir-camera-seek-process.py</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>RGB Sensors</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-S</span> <span class="pre">rgb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/search_instrument/scripts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">picamera2_fps_stream.py</span></code></p></li>
+<li><p>Detach from the session with <kbd class="kbd docutils literal notranslate">CTRL</kbd>+<kbd class="kbd docutils literal notranslate">a</kbd> (release) and then <kbd class="kbd docutils literal notranslate">d</kbd></p></li>
+<li><p>Verify it is running with <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code></p></li>
+</ol>
+</li>
+</ul>
+<section id="id3">
+<h3>Troubleshooting<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>No connection to the flight controller</strong>: Check the connection between the sensors and the flight controller.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+</article>
+        <aside class="nftt-toc my-3">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">User Guide</a><ul>
+<li><a class="reference internal" href="#ground-station-x">Ground Station <span class="math notranslate nohighlight">\(x\)</span></a><ul>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sta-x">STA <span class="math notranslate nohighlight">\(x\)</span></a><ul>
+<li><a class="reference internal" href="#id1">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nfov">NFOV</a><ul>
+<li><a class="reference internal" href="#id2">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wfov">WFOV</a><ul>
+<li><a class="reference internal" href="#id3">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="architecture.html" class="d-flex px-5 align-items-end" rel="prev" aria-label="Previous page: Architecture">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Architecture</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="ci.html" class="d-flex px-5 align-items-end" rel="next" aria-label="Next page: Automated Testing &amp; Deployment">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Automated Testing &amp; Deployment</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="AIVE DDS Documentation">
+          <span class="fs-6 fw-bold">AIVE DDS Documentation</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Toby Godfrey</li>
+          </ul>
+        
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.2.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.8.9</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=cd4e68e4"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=647f0dd8"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </body>
+</html>
